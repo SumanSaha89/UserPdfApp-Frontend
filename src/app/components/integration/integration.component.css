@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+  }
+  
+  .form-container {
+    flex: 1; /* Take up one-fourth of the container */
+    max-width: 25%; /* Limit width to 25% */
+    padding-right: 20px; /* Adjust spacing between the form and table */
+  }
+  
+  .table-container {
+    flex: 3; /* Take up three-fifths of the container */
+    max-width: 100%; /* Limit width to 60% */
+    padding-left: 20px; /* Adjust spacing between the form and table */
+  }
+  

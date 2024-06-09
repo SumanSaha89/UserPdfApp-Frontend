@@ -1,0 +1,53 @@
+<!-- <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email">
+  </div>
+  <div>
+    <label for="phoneNumber">Phone Number</label>
+    <input type="tel" id="phoneNumber" formControlName="phoneNumber">
+  </div>
+  <div>
+    <label for="address">Address</label>
+    <textarea id="address" formControlName="address"></textarea>
+  </div>
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form> -->
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <div *ngIf="userForm.get('name').invalid && userForm.get('name').touched">
+      <div *ngIf="userForm.get('name').errors.required" class="text-danger">Name is required</div>
+    </div>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <div *ngIf="userForm.get('email').invalid && userForm.get('email').touched">
+      <div *ngIf="userForm.get('email').errors.required" class="text-danger">Email is required</div>
+      <div *ngIf="userForm.get('email').errors.email" class="text-danger">Invalid email format</div>
+    </div>
+    <input type="email" id="email" formControlName="email">
+  </div>
+  <div>
+    <label for="phoneNumber">Phone Number</label>
+    <div *ngIf="userForm.get('phoneNumber').invalid && userForm.get('phoneNumber').touched">
+      <div *ngIf="userForm.get('phoneNumber').errors.required" class="text-danger">Phone number is required</div>
+    </div>
+    <input type="tel" id="phoneNumber" formControlName="phoneNumber">
+  </div>
+  <div>
+    <label for="address">Address</label>
+    <div *ngIf="userForm.get('address').invalid && userForm.get('address').touched">
+      <div *ngIf="userForm.get('address').errors.required" class="text-danger">Address is required</div>
+    </div>
+    <textarea id="address" formControlName="address"></textarea>
+  </div>
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
+

@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="form-container">
+    <app-form [userToEdit]="userToEdit" (userSaved)="onUserSaved()"></app-form>
+  </div>
+  <div class="table-container">
+    <app-table (editUserEvent)="onEditUser($event)"></app-table>
+  </div>
+</div>

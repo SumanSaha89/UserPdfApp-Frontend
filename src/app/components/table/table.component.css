@@ -1,0 +1,49 @@
+/* table.component.css */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  thead {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .actions-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .actions-button:hover {
+    background-color: #0056b3;
+  }
+
+  .actions-button.button-spacing {
+    margin-right: 10px; /* Adjust the value as needed */
+  }
+  /* Styling for the button */
+
+  .button-container {
+    display: flex;
+    gap: 10px; /* Adjust the value as needed */
+  }

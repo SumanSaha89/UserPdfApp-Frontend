@@ -1,0 +1,30 @@
+<button class="back-button" (click)="goBack()">
+  <span class="icon">←</span> Back
+</button>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Created At</th>
+        <th>File Name</th>
+        <th>View PDF</th>
+        <th>Download PDF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pdf of pdfs">
+        <td>{{ pdf.id }}</td>
+        <td>{{ pdf.createdAt }}</td>
+        <td>{{ pdf.path }}</td>
+        <td>
+          <button (click)="selectPdf(pdf)">View PDF</button>
+        </td>
+        <td>
+          <button (click)="downloadPdf(pdf)">Download PDF</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<iframe *ngIf="selectedPdfUrl" [src]="selectedPdfUrl" style="width: 100%; height: 500px; border: none;"></iframe>

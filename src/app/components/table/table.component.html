@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Address</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.address }}</td>
+      <td>
+        <button class="actions-button button-spacing"  (click)="editUser(user)">Edit</button>
+        <button class="actions-button" (click)="deleteUser(user.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="button-container">
+<app-pdf-generation></app-pdf-generation> <!-- Add PdfGenerationComponent selector as a button -->
+<button class="actions-button" (click)="downloadPdf()">Download PDF</button>
+<button class="actions-button" (click)="navigateToViewPDF()">View All PDFs</button></div>
